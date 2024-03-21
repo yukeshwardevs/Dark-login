@@ -1,0 +1,131 @@
+html{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    background: lightgrey;
+    box-shadow: rgba(13, 13, 13, 0.486) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.838) 0px 18px 26px -18px inset;
+    background-color: #414141;
+    padding: 15px;
+  }
+  
+  
+  
+  .card {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    background: mediumturquoise;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .card::before,
+  .card::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: lightblue;
+    transition: all 0.5s;
+  }
+  
+  .card::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+  }
+  
+  .card::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100%  0 15px;
+  }
+  
+  .card:hover::before,
+  .card:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+  
+  .card:hover:after {
+    content: "Here";
+  }
+  
+  .inputbox {
+    position: relative;
+    width: 196px;
+  }
+  
+  .inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+  }
+  
+  .inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 00.05em;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  
+  .inputbox input:valid ~span,
+  .inputbox input:focus ~span {
+    color: #45f3ff;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0,75em;
+  }
+  
+  .inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+  }
+  
+  .inputbox input:valid ~i,
+  .inputbox input:focus ~i {
+    height: 44px;
+  }
